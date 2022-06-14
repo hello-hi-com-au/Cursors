@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>idk</title>
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.0/processing.min.js"></script>
+            
+        <script type="application/processing">
+            void setup(){
+                size(1500, 750);
+            }
+
+            void draw(){
+                background(255, 255, 255);
+                stroke(255, 0, 0);
+                line(mouseX, mouseY, mouseX+15, mouseY+15);
+                line(mouseX, mouseY+15, mouseX+15, mouseY);
+            }
+        </script>
+        <canvas></canvas>
+    </body>
+</html>
