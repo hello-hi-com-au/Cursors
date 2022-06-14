@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>idk</title>
+        <style>
+            body {cursor: none;}
+        </style>
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.0/processing.min.js"></script>
+            
+        <script type="application/processing">
+            void setup(){
+                size(1500, 1500);
+            }
+
+            void draw(){
+                background(255, 255, 255);
+                stroke(255, 0, 0);
+                textSize(27)
+                fill(255, 0, 0);
+                text("♥", mouseX, mouseY+15);
+
+            }
+        </script>
+        <canvas></canvas>
+    </body>
+</html>
