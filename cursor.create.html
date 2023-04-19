@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Click</title>
+</head>
+<body>
+<button style="height:45px;" onclick="cursor();"><img src="https://cdn-icons-png.flaticon.com/512/2087/2087818.png" width="30"></button>
+<script>
+function cursor() {
+var c = document.createElement("img");
+c.src = "https://cdn-icons-png.flaticon.com/512/2087/2087818.png";
+c.width = "20";
+c.style.transform = "rotate(" + Math.random() * 360 + "deg)";
+document.body.appendChild(c);
+}
+</script>
+</body>
+</html>
