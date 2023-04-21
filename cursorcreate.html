@@ -2,10 +2,28 @@
 <html>
 <head>
 <title>Click</title>
+<style>
+::selection {
+color: black;
+}
+</style>
 </head>
 <body>
-<button style="height:45px;" onclick="cursor();"><img src="https://cdn-icons-png.flaticon.com/512/2087/2087818.png" width="30"></button>
+
+<h2 id="money">0 Dollars</h2>
+
+<button style="height:45px;" onclick="if(parseInt(document.getElementById('money').innerText) >= commoncost) {
+if(parseInt(document.getElementById('money').innerText) != commoncost + 1) {
+document.getElementById('money').innerText = parseInt(document.getElementById('money').innerText) - commoncost + ' Dollars';
+commoncost++;
+} else {
+document.getElementById('money').innerText = '1 Dollar';
+commoncost++;
+}
+cursor();
+}"><img src="https://cdn-icons-png.flaticon.com/512/2087/2087818.png" width="30"></button>
 <script>
+commoncost = 1;
 function cursor() {
 var c = document.createElement("img");
 c.src = "https://cdn-icons-png.flaticon.com/512/2087/2087818.png";
@@ -14,5 +32,11 @@ c.style.transform = "rotate(" + Math.random() * 360 + "deg)";
 document.body.appendChild(c);
 }
 </script>
+
+<button style="position:absolute; top:48%; left:46%;" onclick="if(parseInt(document.getElementById('money').innerText) != 0) {
+document.getElementById('money').innerText = parseInt(document.getElementById('money').innerText) + 1 + ' Dollars'
+} else {
+document.getElementById('money').innerText = '1 Dollar'
+}">Click</button>
 </body>
 </html>
