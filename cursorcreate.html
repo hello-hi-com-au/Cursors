@@ -26,7 +26,7 @@ cursor();
 <button style="height:30px;"><img src="https://img.freepik.com/free-icon/cogwheel_318-920897.jpg" width="15"></button>
 
 <script>
-commoncost = 1;
+var commoncost = 1;
 function cursor() {
 var c = document.createElement("img");
 c.src = "https://cdn-icons-png.flaticon.com/512/2087/2087818.png";
@@ -34,6 +34,14 @@ c.width = "20";
 c.style.transform = "rotate(" + Math.random() * 360 + "deg)";
 document.body.appendChild(c);
 }
+function commonuse() {
+if(commoncost = 2 & parseInt(document.getElementById('money').innerText) != 0) {
+document.getElementById('money').innerText = parseInt(document.getElementById('money').innerText) + commoncost + ' Dollars';
+} else if(commoncost = 2 & parseInt(document.getElementById('money').innerText == 0) {
+document.getElementById('money').innerText = '1 Dollar';
+}
+}
+setInterval(commonuse, 1000);
 </script>
 
 <button style="position:absolute; top:48%; left:46%;" onclick="if(parseInt(document.getElementById('money').innerText) != 0) {
