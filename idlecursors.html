@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>(Soon to be Idle) Cursors</title>
+</head>
+<body>
+<script>
+</script>
+<h1>Click</h1>
+<h2>0 Dollars</h2>
+<script>
+var c = 0;
+setInterval(function() {if(parseInt(document.querySelector('h2').innerText) == 1 - c) {
+document.querySelector('h2').innerText = '1 Dollar';
+} else {
+document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + c + ' Dollars';
+}}, 8000);
+</script>
+<button onclick="if(parseInt(document.querySelector('h2').innerText) == 0) {
+document.querySelector('h2').innerText = '1 Dollar';
+} else {
+document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + 1 + ' Dollars';
+}">Click</button>
+<br><br>
+<img src="https://cdn-icons-png.flaticon.com/512/2087/2087818.png" width=40>
+<button onclick="if(parseInt(document.querySelector('h2').innerText) >= c) {
+c++;
+document.getElementById('ca').innerText = 'You have ' + c;
+if(parseInt(document.querySelector('h2').innerText) == 2) {
+document.querySelector('h2').innerText = '1 Dollar';
+} else {
+document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - c + ' Dollars';
+}
+}">Buy</button>
+<span id="ca">You have 0</span>
+</body>
+</html>
