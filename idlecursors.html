@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>(Soon to be Idle) Cursors</title>
+</head>
+<body>
+<script>
+</script>
+<h1>Click</h1>
+<h2>0 Moneys</h2>
+<script>
+var c = 0;
+setInterval(function() {document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + c + ' Moneys';}, 8000);
+</script>
+<button onclick="document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + 1 + ' Moneys';">Click</button>
+<button onclick="var all = document.getElementsByTagName('*');
+for (var i = 0; i < all.length; i++)  {    
+all[i].style.display = 'none';
+}
+document.getElementById('back').style.display = 'inline'">Upgrades</button>
+<br><br>
+<img src="https://cdn-icons-png.flaticon.com/512/2087/2087818.png" width=40>
+<button onclick="if(parseInt(document.querySelector('h2').innerText) >= 2 * c + 1) {
+c++;
+c2 = 2 * c + 1;
+document.getElementById('ca').innerText = 'You have ' + c;
+this.innerText = 'Buy (Cost: ' + c2 + ')';
+document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - 2 * c + 1 + ' Moneys';
+}">Buy (Cost: 1)</button>
+<p id="ca">You have 0</p>
+<button id="back" style="display:none;">Back</button>
+</body>
+</html>
