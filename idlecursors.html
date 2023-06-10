@@ -23,13 +23,13 @@ document.querySelector('h2').innerText = parseInt(document.querySelector('h2').i
 }">Click</button>
 <br><br>
 <img src="https://cdn-icons-png.flaticon.com/512/2087/2087818.png" width=40>
-<button onclick="if(parseInt(document.querySelector('h2').innerText) >= c) {
+<button onclick="if(parseInt(document.querySelector('h2').innerText) >= 2 * c + 1) {
 c++;
 document.getElementById('ca').innerText = 'You have ' + c;
-if(parseInt(document.querySelector('h2').innerText) == 2) {
+if(parseInt(document.querySelector('h2').innerText) == 2 * c + 2) {
 document.querySelector('h2').innerText = '1 Dollar';
 } else {
-document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - c + ' Dollars';
+document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - 2 * c + 1 + ' Dollars';
 }
 }">Buy</button>
 <span id="ca">You have 0</span>
