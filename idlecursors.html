@@ -2,27 +2,50 @@
 <html>
 <head>
 <title>(Soon to be Idle) Cursors</title>
+
+<style>
+:not(button) {
+font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+button {
+font-family: 'Inconsolata';
+}
+</style>
 </head>
 <body>
-<button style="display:none;" onclick="
+<script>
+var c = 0;
+var ci = 1;
+setInterval(function() {document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + c + ' Moneys';}, 8000);
+</script>
+<button style="display: none;" class="hidden" onclick="
 for (var i = 5; i < all.length; i++) {
 all[i].style.display = '';
 }
-all[4].style.display = 'none'">Back</button>
-<p style="display:none;">Click</p>
-<button></button>
+for (var i = 0; i < hidden.length; i++) {
+hidden[i].style.display = 'none';
+}">Back</button>
+<p style="display: none;" class="hidden">Click x</p>
+<button class="hidden" style="display: none;" onclick="if(parseInt(document.querySelector('h2').innerText) >= 5 * ci) {
+ci++;
+ci2 = 5 * ci;
+this.innerText = 'Buy (Cost: ' + ci2 + ') Value: ' + ci;
+document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - 5 * ci + 5 + ' Moneys';
+}">Buy (Cost: 5) Value: 1</button>
 <h1>Click</h1>
 <h2>0 Moneys</h2>
-<script>
-var c = 0;
-setInterval(function() {document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + c + ' Moneys';}, 8000);
-</script>
 <button onclick="document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + 1 + ' Moneys';">Click</button>
 <button onclick="var all = document.getElementsByTagName('*');
-for (var i = 5; i < all.length; i++) {
+var hidden = document.getElementsByClassName('hidden');
+for (var i = 9; i < all.length; i++) {
 all[i].style.display = 'none';
 }
-all[4].style.display = 'inline'">Upgrades</button>
+all[6].style = 'display:; position:absolute; bottom:2%;'
+all[7].style.display = '';
+all[8].style.display = '';
+/*for (var i = 1; i < hidden.length; i++) {
+hidden[i].style.display = 'inline';
+}*/">Upgrades</button>
 <br><br>
 <img src="https://cdn-icons-png.flaticon.com/512/2087/2087818.png" width=40>
 <button onclick="if(parseInt(document.querySelector('h2').innerText) >= 2 * c + 1) {
