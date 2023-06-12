@@ -16,36 +16,35 @@ font-family: 'Inconsolata';
 <script>
 var c = 0;
 var ci = 1;
+var ci2 = 5;
 setInterval(function() {document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + c + ' Moneys';}, 8000);
 </script>
-<button style="display: none;" class="hidden" onclick="
-for (var i = 5; i < all.length; i++) {
+<button style = "display:none; position:absolute; bottom:2%;" class="hidden" onclick="
+var hidden = document.getElementsByClassName('hidden');
+for (var i = 7; i < all.length; i++) {
 all[i].style.display = '';
 }
 for (var i = 0; i < hidden.length; i++) {
 hidden[i].style.display = 'none';
 }">Back</button>
 <p style="display: none;" class="hidden">Click x</p>
-<button class="hidden" style="display: none;" onclick="if(parseInt(document.querySelector('h2').innerText) >= 5 * ci) {
+<button class="hidden" style="display: none;" onclick="if(parseInt(document.querySelector('h2').innerText) >= ci2) {
 ci++;
-ci2 = 5 * ci;
+ci2 = 2 * ci2;
 this.innerText = 'Buy (Cost: ' + ci2 + ') Value: ' + ci;
-document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - 5 * ci + 5 + ' Moneys';
+document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - ci2 / 2 + ' Moneys';
 }">Buy (Cost: 5) Value: 1</button>
 <h1>Click</h1>
 <h2>0 Moneys</h2>
-<button onclick="document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + 1 + ' Moneys';">Click</button>
+<button onclick="document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + ci + ' Moneys';">Click</button>
 <button onclick="var all = document.getElementsByTagName('*');
 var hidden = document.getElementsByClassName('hidden');
 for (var i = 9; i < all.length; i++) {
 all[i].style.display = 'none';
 }
-all[6].style = 'display:; position:absolute; bottom:2%;'
-all[7].style.display = '';
-all[8].style.display = '';
-/*for (var i = 1; i < hidden.length; i++) {
-hidden[i].style.display = 'inline';
-}*/">Upgrades</button>
+for (var i = 0; i < hidden.length; i++) {
+hidden[i].style.display = '';
+}">Upgrades</button>
 <br><br>
 <img src="https://cdn-icons-png.flaticon.com/512/2087/2087818.png" width=40>
 <button onclick="if(parseInt(document.querySelector('h2').innerText) >= 2 * c + 1) {
