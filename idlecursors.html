@@ -5,10 +5,10 @@
 
 <style>
 :not(button) {
-font-family: "Comic Sans MS", "Comic Sans", cursive;
+font-family: Comic Sans MS, Comic Sans, cursive;
 }
 button {
-font-family: 'Inconsolata';
+font-family: Times New Roman, Times, serif;
 }
 </style>
 </head>
@@ -17,6 +17,7 @@ font-family: 'Inconsolata';
 var c = 0;
 var ci = 1;
 var ci2 = 5;
+var cs = 100;
 setInterval(function() {document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + c + ' Moneys';}, 8000);
 </script>
 <button style = "display:none; position:absolute; bottom:2%;" class="hidden" onclick="
@@ -54,6 +55,18 @@ document.getElementById('ca').innerText = 'You have ' + c;
 this.innerText = 'Buy (Cost: ' + c2 + ')';
 document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - 2 * c + 1 + ' Moneys';
 }">Buy (Cost: 1)</button>
+<button onclick="if(parseInt(document.querySelector('h2').innerText) >= cs) {
+f = String(cs)[0];
+if(f == '1' || f == '5') {
+cs*=2;
+var h = 2;
+} else {
+cs*=2.5;
+var h = 2.5;
+}
+this.innerText = 'Speed (Cost: ' + cs + ')';
+document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - cs / h + ' Moneys';
+}">Speed (Cost: 100)</button>
 <p id="ca">You have 0</p>
 </body>
 </html>
