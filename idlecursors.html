@@ -2,7 +2,6 @@
 <html>
 <head>
 <title>(Soon to be Idle) Cursors</title>
-
 <style>
 :not(button) {
 font-family: Comic Sans MS, Comic Sans, cursive;
@@ -18,7 +17,9 @@ var c = 0;
 var ci = 1;
 var ci2 = 5;
 var cs = 100;
-setInterval(function() {document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + c + ' Moneys';}, 8000);
+var t = 8000;
+var uc = 0;
+setInterval(function() {document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + c + 250 * uc + ' Moneys'}, t);
 </script>
 <button style = "display:none; position:absolute; bottom:2%;" class="hidden" onclick="
 var hidden = document.getElementsByClassName('hidden');
@@ -55,7 +56,7 @@ document.getElementById('ca').innerText = 'You have ' + c;
 this.innerText = 'Buy (Cost: ' + c2 + ')';
 document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - 2 * c + 1 + ' Moneys';
 }">Buy (Cost: 1)</button>
-<button onclick="if(parseInt(document.querySelector('h2').innerText) >= cs) {
+<button disabled onclick="if(parseInt(document.querySelector('h2').innerText) >= cs) {
 f = String(cs)[0];
 if(f == '1' || f == '5') {
 cs*=2;
@@ -66,7 +67,29 @@ var h = 2.5;
 }
 this.innerText = 'Speed (Cost: ' + cs + ')';
 document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - cs / h + ' Moneys';
-}">Speed (Cost: 100)</button>
+}">Speed (Cost: 100) i disabled cause it doesn't work yet</button>
 <p id="ca">You have 0</p>
+
+<img src="https://greensofa24.github.io/Cursors/uncommon.png" width=40>
+<button onclick="if(parseInt(document.querySelector('h2').innerText) >= 250 * uc ** 2 + 500) {
+uc++;
+uc2 = 250 * uc ** 2 + 500;
+document.getElementById('uca').innerText = 'You have ' + uc;
+this.innerText = 'Buy (Cost: ' + uc2 + ')';
+document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - uc2 + ' Moneys';
+}">Buy (Cost: 500)</button>
+<button disabled onclick="if(parseInt(document.querySelector('h2').innerText) >= cs) {
+f = String(cs)[0];
+if(f == '1' || f == '5') {
+cs*=2;
+var h = 2;
+} else {
+cs*=2.5;
+var h = 2.5;
+}
+this.innerText = 'Speed (Cost: ' + cs + ')';
+document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - cs / h + ' Moneys';
+}">Speed (Cost: 50000) i disabled cause it doesn't work yet</button>
+<p id="uca">You have 0</p>
 </body>
 </html>
