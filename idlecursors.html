@@ -33,7 +33,7 @@ for (var i = 0; i < hidden.length; i++) {
 hidden[i].style.display = 'none';
 }">Back</button>
 <p style="display: none;" class="hidden">Click x</p>
-<button class="hidden" style="display: none;" onclick="if(parseInt(document.querySelector('h2').innerText) >= ci2) {
+<button class="hidden" style="display: none;" onclick="if(parseInt(document.querySelector('h2').innerText) >= cl2) {
 cl++;
 cl2*=2;
 this.innerText = 'Buy (Cost: ' + cl2 + ') Value: ' + cl;
@@ -41,7 +41,7 @@ document.querySelector('h2').innerText = parseInt(document.querySelector('h2').i
 }">Buy (Cost: 5) Value: 1</button>
 <h1>Click</h1>
 <h2>0 Moneys</h2>
-<button onclick="document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + ci + ' Moneys';">Click</button>
+<button onclick="document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + cl + ' Moneys';">Click</button>
 <button onclick="var all = document.getElementsByTagName('*');
 var hidden = document.getElementsByClassName('hidden');
 for (var i = 9; i < all.length; i++) {
