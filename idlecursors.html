@@ -14,12 +14,15 @@ font-family: Times New Roman, Times, serif;
 <body>
 <script>
 var c = 0;
-var ci = 1;
-var ci2 = 5;
-var cs = 100;
-var t = 8000;
 var uc = 0;
-setInterval(function() {document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + c + 250 * uc + ' Moneys'}, t);
+var cl = 1;
+var cl2 = 5;
+var cs = 100;
+var ucs = 50000;
+var t = 8000;
+var ut = 8000;
+var mpc = setInterval(function() {document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + c + ' Moneys'}, t);
+var mpuc = setInterval(function() {document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + 250 * uc + ' Moneys'}, t);
 </script>
 <button style = "display:none; position:absolute; bottom:2%;" class="hidden" onclick="
 var hidden = document.getElementsByClassName('hidden');
@@ -31,10 +34,10 @@ hidden[i].style.display = 'none';
 }">Back</button>
 <p style="display: none;" class="hidden">Click x</p>
 <button class="hidden" style="display: none;" onclick="if(parseInt(document.querySelector('h2').innerText) >= ci2) {
-ci++;
-ci2 = 2 * ci2;
-this.innerText = 'Buy (Cost: ' + ci2 + ') Value: ' + ci;
-document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - ci2 / 2 + ' Moneys';
+cl++;
+cl2*=2;
+this.innerText = 'Buy (Cost: ' + cl2 + ') Value: ' + cl;
+document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - cl2 / 2 + ' Moneys';
 }">Buy (Cost: 5) Value: 1</button>
 <h1>Click</h1>
 <h2>0 Moneys</h2>
@@ -47,6 +50,7 @@ all[i].style.display = 'none';
 for (var i = 0; i < hidden.length; i++) {
 hidden[i].style.display = '';
 }">Upgrades</button>
+<button>Managers</button>
 <br><br>
 <img src="https://cdn-icons-png.flaticon.com/512/2087/2087818.png" width=40>
 <button onclick="if(parseInt(document.querySelector('h2').innerText) >= 2 * c + 1) {
@@ -56,40 +60,33 @@ document.getElementById('ca').innerText = 'You have ' + c;
 this.innerText = 'Buy (Cost: ' + c2 + ')';
 document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - 2 * c + 1 + ' Moneys';
 }">Buy (Cost: 1)</button>
-<button disabled onclick="if(parseInt(document.querySelector('h2').innerText) >= cs) {
-f = String(cs)[0];
-if(f == '1' || f == '5') {
-cs*=2;
-var h = 2;
-} else {
-cs*=2.5;
-var h = 2.5;
-}
+<button onclick="if(parseInt(document.querySelector('h2').innerText) >= cs) {
+t/=2;
+cs*=5;
 this.innerText = 'Speed (Cost: ' + cs + ')';
-document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - cs / h + ' Moneys';
-}">Speed (Cost: 100) i disabled cause it doesn't work yet</button>
+document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - cs / 5 + ' Moneys';
+clearInterval(mpc);
+mpc = setInterval(function() {document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + c + ' Moneys'}, t);
+}">Speed (Cost: 100)</button>
 <p id="ca">You have 0</p>
 
 <img src="https://greensofa24.github.io/Cursors/uncommon.png" width=40>
 <button onclick="if(parseInt(document.querySelector('h2').innerText) >= 250 * uc ** 2 + 500) {
-uc++;
 uc2 = 250 * uc ** 2 + 500;
+uc++;
 document.getElementById('uca').innerText = 'You have ' + uc;
-this.innerText = 'Buy (Cost: ' + uc2 + ')';
+this.innerText = 'Buy (Cost: ' + 2 * uc2 + ')';
 document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - uc2 + ' Moneys';
 }">Buy (Cost: 500)</button>
-<button disabled onclick="if(parseInt(document.querySelector('h2').innerText) >= cs) {
-f = String(cs)[0];
-if(f == '1' || f == '5') {
-cs*=2;
-var h = 2;
-} else {
-cs*=2.5;
-var h = 2.5;
-}
-this.innerText = 'Speed (Cost: ' + cs + ')';
-document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - cs / h + ' Moneys';
-}">Speed (Cost: 50000) i disabled cause it doesn't work yet</button>
+<button onclick="if(parseInt(document.querySelector('h2').innerText) >= cs) {
+ut/=2;
+ucs*=5;
+this.innerText = 'Speed (Cost: ' + ucs + ')';
+document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) - ucs / 5 + ' Moneys';
+clearInterval(mpuc);
+mpuc = setInterval(function() {document.querySelector('h2').innerText = parseInt(document.querySelector('h2').innerText) + 250 * uc + ' Moneys'}, t);
+}">Speed (Cost: 50000)</button>
 <p id="uca">You have 0</p>
+<p style="position:fixed; bottom: 0; right: 2%;">course i <i>had</i> to use <span style="text-decoration-line: underline; text-decoration-style: double;"><b>comic sans</b></span></p>
 </body>
 </html>
