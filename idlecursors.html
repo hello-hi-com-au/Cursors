@@ -50,7 +50,7 @@ hidden[i].style.display = 'none';
 <button class="hidden" style="display: none;" onclick="if(m >= cl2) {
 cl++;
 cl2*=2;
-this.innerText = 'Buy (Cost: ' + cl2 + ') Value: ' + cl;
+this.innerText = 'Buy (Cost: ' + f(cl2) + ') Value: ' + cl;
 m = m - cl2 / 2;
 document.querySelector('h2').innerText = f(m) + ' Moneys';
 }">Buy (Cost: 5) Value: 1</button>
@@ -58,7 +58,7 @@ document.querySelector('h2').innerText = f(m) + ' Moneys';
 <button class="hidden" style="display: none;" onclick="if(m >= clx2) {
 clx++;
 clx2*=5;
-this.innerText = 'Buy (Cost: ' + clx2 + ') Value: ' + clx;
+this.innerText = 'Buy (Cost: ' + f(clx2) + ') Value: ' + clx;
 m = m - clx2 / 5;
 document.querySelector('h2').innerText = f(m) + ' Moneys';
 }">Buy (Cost: 500K) Value: 1</button>
@@ -118,12 +118,12 @@ document.querySelector('h2').innerText = f(m) + ' Moneys';}, t);
 <p id="uca">You have 0</p>
 
 <img src="https://greensofa24.github.io/Cursors/rare.png" width=40>
-<button onclick="if(m >= 1000000 * (rc + 1) ** 3) {
+<button onclick="if(m >= 1000000 * (rc + 1) ** 5) {
 rc++;
-rc2 = 1000000 * (rc + 1) ** 3;
+rc2 = 1000000 * (rc + 1) ** 5;
 document.getElementById('rca').innerText = 'You have ' + rc;
 this.innerText = 'Buy (Cost: ' + f(rc2) + ')';
-m = m - 1000000 * rc ** 3;
+m = m - 1000000 * rc ** 5;
 document.querySelector('h2').innerText = f(m) + ' Moneys';
 }">Buy (Cost: 1M)</button>
 <button onclick="if(m >= rcs) {
@@ -185,6 +185,8 @@ mpc = setInterval(function() {m = m + c}, t) || mpc;
 mpuc = setInterval(function() {m = m + 250 * uc}, ut) || mpuc;
 mprc = setInterval(function() {m = m + 1000000 * (2 * rc) ** 2}, rt) || mprc;">Load</button>
 <p style="position:fixed; bottom: -2%; right: 2%;">course i <i>had</i> to use <span style="text-decoration-line: underline; text-decoration-style: double;"><b>comic sans</b></span></p>
+<button>Export</button>
+<button>Import</button>
 </body>
 </html>
 <!--Cursor Bidle-->
