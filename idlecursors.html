@@ -185,8 +185,24 @@ mpc = setInterval(function() {m = m + c}, t) || mpc;
 mpuc = setInterval(function() {m = m + 250 * uc}, ut) || mpuc;
 mprc = setInterval(function() {m = m + 1000000 * (2 * rc) ** 2}, rt) || mprc;">Load</button>
 <p style="position:fixed; bottom: -2%; right: 2%;">course i <i>had</i> to use <span style="text-decoration-line: underline; text-decoration-style: double;"><b>comic sans</b></span></p>
-<button>Export</button>
+
+<script>
+function save(content) {
+const element = document.createElement('a');
+const blob = new Blob([content], { type: 'plain/text' });
+const fileUrl = URL.createObjectURL(blob);
+element.setAttribute('href', fileUrl);
+element.setAttribute('download', 'cursorsave.txt');
+document.body.appendChild(element);
+element.click();
+document.body.removeChild(element);
+};
+</script>
+<button id="download" onclick="const content = m + '/' + c + '/' + uc + '/' + rc + '/' + t + '/' + ut + '/' + rt + '/' + cl + '/' + cl2 + '/' + cs + '/' + ucs + '/' + rcs;
+save(content);">Export</button>
+
 <button>Import</button>
+
 </body>
 </html>
 <!--Cursor Bidle-->
